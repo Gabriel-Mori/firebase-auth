@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet"
+        href="./style.css">
+  <title>Firebase Auth</title>
+</head>
+
+<body class=" darken-3">
+  <nav class=" white">
+    <div class="container-dropdown">
+
+      <a class='dropdown-trigger'
+         href='#'
+         data-target='dropdown1'><img class="img-menu"
+             src="./img/menu.png"
+             alt=""></a>
+
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1'
+          class='dropdown-content'
+          data-js="nav-ul">
+        <li data-js="logged-in"
+            class="hide ">
+          <a href="#"
+             class="dropdown-contents blue-grey-text modal-trigger"
+             data-target="modal-add-phrase">Adicionar colaborador</a>
+        </li>
+        <li data-js="logged-in"
+            class="hide">
+          <a data-js="account-link"
+             href="#"
+             class="blue-grey-text modal-trigger"
+             data-target="slide-out">Conta</a>
+        </li>
+        <li data-js="logged-in"
+            class="hide">
+          <a data-js="logout"
+             href="#"
+             class="blue-grey-text">Logout</a>
+        </li>
+        <li data-js="logged-out"
+            class="hide">
+          <a href="#"
+             class="blue-grey-text modal-trigger"
+             data-target="modal-login">Login</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <div data-js="modal"
+       data-modal="login"
+       id="modal-login"
+       class="modal darken-4 blue-grey-text text-lighten-5">
+    <div class="modal-content">
+      <h4 class="blue-grey-text ">Login</h4><br />
+      <button data-js="button-google"
+              class="btn red darken-1 z-depth-0">Entrar com Google</button>
+    </div>
+  </div>
+
+  <div data-js="modal"
+       id="slide-out"
+       class="details sidenav darken-4 blue-grey-text text-lighten-5">
+    <div class="user-view center-align">
+      <h4 class="blue-grey-text ">Detalhes da conta</h4><br>
+      <div class="img">
+        <img data-js="image-url"
+             src=""
+             alt=""
+             class="photo-url">
+        <div class="paragraph-name"
+             data-js="account-details">
+          <p class="left-align"
+             data-js="paragraph-name"></p>
+        </div>
+
+        <div class="paragraph-name"
+             data-js="account-details">
+          <p class="left-align"
+             data-js="paragraph-email"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-js="modal"
+       data-modal="add-phrase"
+       id="modal-add-phrase"
+       class="modal  darken-4 blue-grey-text text-lighten-5">
+    <div class="modal-content">
+      <h4 class="blue-grey-text">Adicionar Colaborador</h4><br />
+
+      <form data-js="add-phrase-form">
+        <div class="input-field">
+          <input class="black-text text-lighten-5"
+                 type="text"
+                 name="title"
+                 required>
+          <label class="blue-grey-text"
+                 for="title">Nome</label>
+        </div>
+
+        <div class="input-field">
+          <input class="black-text text-lighten-5"
+                 name="phrase"
+                 type="text"
+                 required></input>
+          <label class="blue-grey-text"
+                 for="phrase">Email</label>
+        </div>
+
+        <div class="input-field">
+          <input class="black-text text-lighten-5"
+                 name="function"
+                 type="text"
+                 required></input>
+          <label class="blue-grey-text"
+                 for="phrase">Função</label>
+        </div>
+
+        <button class="btn red darken-1 z-depth-0">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <div data-js="phrases-container"
+       class="container phrases-container">
+    <table data-js="phrases-list"
+           id="tabela"
+           style="border: 1px;"
+           cellpadding="5px"
+           cellspacing="0">
+      <tr class="cabecalho">
+        <td>Nome</td>
+        <td>Email</td>
+        <td>Função</td>
+
+      </tr>
+    </table>
+    <!-- <ul data-js="phrases-list"
+        class="collapsible z-depth-0 phrases">
+
+    </ul> -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.8/purify.min.js"
+          integrity="sha512-M72KfQy4kPuLYC6CeTrN0eA17U1lXEMrr5qEJC/40CLdZGC3HpwPS0esQLqBHnxty2FIcuNdP9EqwSOCLEVJXQ=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
+  <script type="module"
+          src="./app.js"></script>
+</body>
+
+</html>
